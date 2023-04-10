@@ -1,0 +1,13 @@
+<div
+  *ngIf="router.url !== '/auth/login' && router.url !== '/404'"
+  class="footer"
+>
+  <img
+    src="assets/svg/logo-o4b-kontra.svg"
+    class="footer-image"
+    alt="company logo"
+  />
+  <span class="footer-version">
+    {{ "CURRENT_VERSION_OF_THE_SITE" | translate }} 1.8.62</span
+  >
+</div>

@@ -1,0 +1,24 @@
+@use "../../styles/variables.scss" as variables;
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: variables.$gray-200;
+  height: 11vh;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+}
+.footer-image {
+  height: 6.5vh;
+  padding-left: 2.6vw;
+  background: transparent;
+}
+.footer-version {
+  padding-right: 2.6vw;
+  font-size: 1.8vh;
+  color: variables.$gray;
+}

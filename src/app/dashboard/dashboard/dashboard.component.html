@@ -1,0 +1,92 @@
+<div class="page-wrapper">
+  <div class="sub-header">
+    <span class="greet-header">{{ "HELLO" | translate }}</span>
+    <span class="description-header"
+      >{{ "GREET1" | translate }}
+      <div>{{ "GREET2" | translate }}</div></span
+    >
+  </div>
+  <div class="informations-section">
+    <div class="info-section">
+      <div class="text-bold">{{ "YOUR_AGENTS" | translate }}</div>
+      <div>10</div>
+      <button mat-stroked-button class="agent-button">
+        {{ "SEE_AGENTS" | translate }}
+      </button>
+      <a href="#"
+        ><img src="assets/svg/button-icon-action.svg" alt="Navigation menu"
+      /></a>
+    </div>
+    <div class="info-section-missions">
+      <div class="text-bold">{{ "MISSIONS" | translate }}</div>
+      <div>10 {{ "ACTIVE" | translate }}</div>
+      <button mat-stroked-button class="mission-button">
+        {{ "CHECK_MISSIONS" | translate }}
+      </button>
+      <a href="#"
+        ><img src="assets/svg/button-icon-action.svg" alt="Navigation menu"
+      /></a>
+    </div>
+  </div>
+  <div class="modules-section">
+    <span class="modules-header">{{ "MODULES" | translate }}</span>
+    <div class="modules">
+      <div class="mission-management">
+        <a class="modules-nav-dotted-button" [routerLink]="['/404']"
+          ><img
+            src="assets/svg/button-icon-action.svg"
+            alt="Navigation menu" /></a
+        ><img
+          class="modules-image"
+          src="assets/svg/icon-resources.svg"
+          alt="Resources section"
+        /><span>{{ "MISSION_MANAGEMENT" | translate }}</span
+        ><a class="modules-nav-button" [routerLink]="['/missions']">{{
+          "GO" | translate
+        }}</a>
+      </div>
+      <div class="mission-management">
+        <a class="modules-nav-dotted-button" [routerLink]="['/404']"
+          ><img
+            src="assets/svg/button-icon-action.svg"
+            alt="Navigation menu" /></a
+        ><img
+          class="modules-image"
+          src="assets/svg/icon-configuration.svg"
+          alt="Configuration section"
+        /><span>{{ "POINTS_OF_SPECIAL_ADDRESS" | translate }}</span
+        ><a class="modules-nav-button" [routerLink]="['/addresses']">{{
+          "GO" | translate
+        }}</a>
+      </div>
+      <div class="mission-management">
+        <a class="modules-nav-dotted-button" [routerLink]="['/404']"
+          ><img
+            src="assets/svg/button-icon-action.svg"
+            alt="Navigation menu" /></a
+        ><img
+          class="modules-image"
+          src="assets/svg/icon-translation.svg"
+          alt="Teleportation section"
+        /><span>{{ "TELEPORTATION" | translate }}</span
+        ><a class="modules-nav-button" [routerLink]="['/404']">{{
+          "GO" | translate
+        }}</a>
+      </div>
+      <div class="mission-management">
+        <a class="modules-nav-dotted-button" [routerLink]="['/404']"
+          ><img
+            src="assets/svg/button-icon-action.svg"
+            alt="Navigation menu" /></a
+        ><img
+          class="modules-image"
+          src="assets/svg/icon-export-import.svg"
+          alt="Export-Import Section"
+        /><span>Eksport/Import</span
+        ><a class="modules-nav-button" [routerLink]="['/404']">{{
+          "GO" | translate
+        }}</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,152 @@
+@use "../../../styles/variables.scss" as variables;
+
+
+.login-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 5vh;
+}
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5vw;
+  background-color: variables.$white;
+  border-radius: 20px;
+  width: 32vw;
+  padding: 1.5vw;
+  margin-top: 2.5vw;
+}
+.form-label {
+  font-size: 1.5vw;
+  font-weight: normal;
+}
+
+.form-action-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.forget-passowrd {
+  color: variables.$green;
+  text-decoration: none;
+  border: none;
+  font-size: 1.8vh;
+  background-color: variables.$white;
+  font-family: "Montserrat";
+}
+input[type="checkbox"] {
+  accent-color: variables.$green;
+  color: variables.$white;
+}
+
+:host {
+  ::ng-deep {
+    .mat-checkbox {
+      font-family: "Montserrat";
+    }
+    .mat-form-field {
+      background-color: variables.$white;
+      width: 32vw;
+      font-family: "Montserrat";
+    }
+    .mat-stroked-button.mat-primary {
+      display: inline-block;
+      border: none;
+      border-radius: 50px;
+      color: #fff;
+      font-size: 1.6vh;
+      padding: 0.2vh 2vh;
+      font-weight: lighter;
+      background-color: variables.$green;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+      transition: background-color 0.2s ease-in-out;
+      font-family: "Montserrat";
+    }
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+      background-color: variables.$green;
+      font-size: 1.6vh;
+      font-family: "Montserrat";
+    }
+    .mat-checkbox .mat-checkbox-frame {
+      border-color: variables.$green;
+      font-size: 1.6vh;
+      background-color: variables.$white;
+      font-family: "Montserrat";
+    }
+    .mat-form-field-appearance-fill .mat-form-field-flex {
+      background-color: variables.$white;
+      padding: 0;
+      border-radius: 0px;
+    }
+    .mat-form-field-infix {
+      border: none;
+    }
+    .mat-checkbox-label {
+      text-transform: none;
+      font-size: 1vw;
+    }
+    .forgot-your-passowrd {
+      font-size: 1vw;
+      margin-top: 2px;
+    }
+  }
+  .company-logo {
+    width: 15vh;
+    height: 15vh;
+  }
+}
+@media only screen and (max-width: 840px) {
+  :host {
+    ::ng-deep {
+      .mat-checkbox-label {
+        font-size: 11px;
+      }
+    }
+  }
+  .form-action {
+    display: flex;
+    flex-direction: column;
+  }
+  .mat-checkbox-label {
+    text-transform: none;
+    font-size: 11px;
+  }
+  .forgot-your-passowrd {
+    font-size: 11px;
+    margin-top: 2px;
+  }
+  .forget-passowrd {
+    font-size: 11px;
+  }
+  .form-label {
+    font-size: 11px;
+  }
+  .form-wrapper {
+    width: 40vw;
+  }
+}
+@media only screen and (max-width: 400px) {
+  :host {
+    ::ng-deep {
+      .mat-checkbox-label {
+        text-transform: none;
+        font-size: 1.4vh;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<div class="page-wrapper">
+  <div class="sidebar">
+    <div class="sidebar-sub">{{ "POINTS_OF_SPECIAL_ADDRESS" | translate }}</div>
+  </div>
+  <div class="addresses-table">
+    <ng-container *ngIf="viewModel$ | async as viewModel">
+      <h1>{{ "POINTS_OF_SPECIAL_ADDRESS" | translate }}</h1>
+      <ng-container [ngSwitch]="viewModel.loadState">
+        <div *ngSwitchCase="'idle'">
+          <div class="border">
+            <div>{{ "ITS_EMPTY" | translate }}</div>
+            <img class="image" src="assets/svg/illustration.svg" alt="rocket image" />
+            <button (click)="loadAddresses()" class="load-address-button">
+              {{ "LOAD_ADDRESSES" | translate }}
+            </button>
+          </div>
+        </div>
+        <div *ngSwitchCase="'loading'">
+          <mat-spinner></mat-spinner>
+        </div>
+
+        <div *ngSwitchCase="'loaded'" class="address-wrapper">
+          <button
+            mat-stroked-button
+            (click)="openCreateAddressModal()"
+            class="add-mission-button"
+          >
+            {{ "ADD_ADDRESS" | translate }}
+          </button>
+
+          <app-address-table
+            [addresses]="viewModel.addresses"
+            (deleteAddress)="deleteAddress($event)"
+            (editAddress)="editAddress($event)"
+          ></app-address-table>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

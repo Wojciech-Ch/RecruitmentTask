@@ -1,0 +1,136 @@
+@use "../../../styles/variables.scss" as variables;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+:host {
+  font-family: "Montserrat";
+}
+
+app-missions-table {
+  width: 100%;
+}
+
+.mission-section-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1%;
+  width: 100%;
+  justify-content: center;
+  padding: 3% 5% 0 3%;
+}
+.missions-table {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 50%;
+}
+.sidebar {
+  width: 20%;
+  background-color: variables.$white;
+  border-radius: 20px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar-sub {
+  background-color: variables.$gray;
+  padding: 15px 0 5px 15px;
+  font-weight: 600;
+  width: 100%;
+  margin-right: 10%;
+  border-radius: 0 20px 20px 0;
+  height: 30%;
+}
+.load-mission-button {
+  background-color: variables.$white;
+  border: 0.1rem solid variables.$green;
+  border-radius: 3rem;
+  font-size: 11px;
+  color: variables.$green;
+  height: 5.8vh;
+  width: 13.5vw;
+}
+.add-mission-button {
+  border: 0.1rem solid variables.$green;
+  border-radius: 3rem;
+  font-size: 1.5vh;
+  color: variables.$green;
+  height: 5.8vh;
+  width: 13.5vw;
+}
+
+.table-container {
+  width: 30rem;
+}
+.border {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: variables.$white;
+  border-radius: 2rem;
+  padding: 2rem;
+  width: 85%;
+}
+.image {
+  height: 25.6vh;
+  width: 13vw;
+}
+.missions-header {
+  font-size: 1.6vw;
+}
+.missions-sub-header,
+.desc {
+  font-size: 11px;
+}
+@media only screen and (max-width: 840px) {
+  .mission-section-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 95%;
+  }
+  .missions-header {
+    font-size: 3vw;
+    text-align: center;
+  }
+  .sidebar-sub {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+  .missions-sub-header {
+    text-align: center;
+    font-size: 2.7vw;
+  }
+  .missions-table {
+    width: 95%;
+    margin-bottom: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .add-mission-button {
+    width: 40vw;
+  }
+  .load-mission-button {
+    width: 90px;
+  }
+  .border-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  :host {
+    display: block;
+    height: 100%;
+    ::ng-deep {
+      app-missions-table {
+        margin-left: 10%;
+      }
+    }
+  }
+}

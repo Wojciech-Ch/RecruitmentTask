@@ -1,0 +1,106 @@
+<mat-drawer-container>
+  <mat-drawer #drawer mode="over">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" routerLinkActive="active">Dashboard</a>
+      <a mat-list-item routerLink="/missions" routerLinkActive="active">{{
+        "MISSIONS" | translate
+      }}</a>
+      <a mat-list-item routerLink="/addresses" routerLinkActive="active">{{
+        "POINTS_OF_SPECIAL_ADDRESS" | translate
+      }}</a>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <mat-toolbar
+    color="primary"
+    *ngIf="
+      (isLoggedIn$ | async) &&
+      router.url !== '/auth/login' &&
+      router.url !== '/404'
+    "
+  >
+    <button
+      class="navbar-label"
+      type="button"
+      mat-button
+      (click)="drawer.toggle()"
+    >
+      Menu
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img class="o4b-logo" src="assets/svg/logo-o4b.svg" alt="company logo" />
+    <button
+      class="change-language-section"
+      type="button"
+      mat-button
+      (click)="toggleLanguage()"
+    >
+      {{ "LANGUAGE" | translate }}
+      <img
+        class="change-language-scetion-icon"
+        src="assets/svg/icon-navbar-languages-v1.0.svg"
+        alt="language toogle"
+      />
+      {{ (language ? "EN" : "PL") | translate }}
+    </button>
+    <div class="navbar-actions">
+      <img
+        class="search-icon"
+        src="assets/svg/icon-navbar-search-v2.0.svg"
+        alt="navbar search section"
+      />
+
+      <button
+        (click)="isOpen = !isOpen"
+        type="button"
+        cdkOverlayOrigin
+        #trigger="cdkOverlayOrigin"
+        class="navbar-actions-button"
+      >
+        <img src="assets/svg/Intersection 3.png" alt="profile avatar" />
+        <b>Agent Specjalny 008</b>
+      </button>
+
+      <div>
+        <div>
+          <ng-template
+            cdkConnectedOverlay
+            [cdkConnectedOverlayOrigin]="trigger"
+            [cdkConnectedOverlayOpen]="isOpen"
+            [cdkConnectedOverlayHasBackdrop]="true"
+            (backdropClick)="isOpen = false"
+            (detach)="isOpen = false"
+            [cdkConnectedOverlayPositions]="[
+              {
+                originX: 'end',
+                originY: 'bottom',
+                overlayX: 'end',
+                overlayY: 'top'
+              }
+            ]"
+          >
+            <div class="overlay-wrapper">
+              <div class="overlay-header">
+                {{ "LOGIN_CREDENTIALS" | translate }}
+              </div>
+              <div class="user-info">
+                {{ "LOGGED_IN" | translate }} <b>Agent Specjalny 008</b>
+              </div>
+
+              <div>
+                <button type="button" mat-button (click)="logout()">
+                  <mat-icon>power_settings_new</mat-icon>
+                  {{ "LOGOUT" | translate }}
+                </button>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+</mat-drawer-container>

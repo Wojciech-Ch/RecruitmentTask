@@ -1,0 +1,133 @@
+@use "../../../styles/variables.scss" as variables;
+
+:host {
+  display: block;
+  ::ng-deep {
+    .mat-checkbox {
+      font-family: "Montserrat";
+    }
+    .mat-form-field {
+      display: block;
+    }
+    .mat-dialog-container {
+      border-radius: 20px;
+    }
+    .mat-form-field-infix {
+      width: 23vw;
+    }
+    .mat-form-field-appearance-fill .mat-form-field-flex {
+      background-color: variables.$white;
+    }
+    .mission-modal-header-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+    }
+  }
+}
+
+.mission-modal-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 52vw;
+  height: 38vh;
+  border-radius: 50px;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.form-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.form-button {
+  display: inline-block;
+  border: 1px solid variables.$green;
+  border-radius: 50px;
+  color: variables.$green;
+  font-size: 1.1vw;
+  padding: 2px 24px;
+  font-weight: lighter;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 30px;
+  height: 40px;
+}
+.form-button-save {
+  background-color: variables.$green;
+  display: inline-block;
+  border: 1px solid variables.$green;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.1vw;
+  padding: 2px 24px;
+  font-weight: lighter;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 30px;
+  height: 40px;
+}
+
+.mission-modal-wrapper-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  width: 41vw;
+  height: 21vh;
+}
+.navigation-buttons {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  gap: 30px;
+}
+.form-button-dashboard {
+  background-color: variables.$white;
+  display: inline-block;
+  border: 1px solid variables.$green;
+  border-radius: 50px;
+  color: variables.$green;
+  font-size: 13px;
+  padding: 2px 24px;
+  font-weight: lighter;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 30px;
+  height: 40px;
+}
+.green-tick-icon {
+  width: 4, 5vw;
+  height: 9vh;
+}
+@media only screen and (max-width: 840px) {
+  .form-button-dashboard,
+  .form-button-save,
+  .form-button {
+    font-size: 1.3vh;
+  }
+  .green-tick-icon {
+    display: none;
+  }
+  :host {
+    ::ng-deep {
+      .mat-dialog-container {
+        width: 100%;
+      }
+    }
+    .form-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-button-wrapper {
+      margin-bottom: 10px;
+    }
+  }
+}

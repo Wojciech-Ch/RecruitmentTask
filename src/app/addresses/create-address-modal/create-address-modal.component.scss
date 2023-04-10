@@ -1,0 +1,140 @@
+$green: #27c722;
+
+:host {
+  display: block;
+  ::ng-deep {
+    .mat-checkbox {
+      font-family: "Montserrat";
+    }
+    .mat-form-field {
+      display: block;
+      width: 25vw;
+    }
+    .mat-dialog-container {
+      border-radius: 20px;
+    }
+    .mat-form-field-infix {
+      width: 15vw;
+    }
+    .mat-form-field-appearance-fill .mat-form-field-flex {
+      background-color: white;
+    }
+    .address-modal-header-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+    }
+    .mat-progress-bar,
+    #type-select {
+      width: 100%;
+    }
+  }
+}
+
+.address-modal-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  width: 52vw;
+  height: 55vh;
+  border-radius: 100%;
+}
+.form-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.form-button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.form-button {
+  display: inline-block;
+  border: 1px solid #27c722;
+  border-radius: 50px;
+  color: $green;
+  font-size: 13px;
+  padding: 2px 24px;
+  font-weight: lighter;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 30px;
+  height: 40px;
+}
+.form-button-save {
+  background-color: $green;
+  display: inline-block;
+  border: 1px solid #27c722;
+  border-radius: 50px;
+  color: white;
+  font-size: 13px;
+  padding: 2px 24px;
+  font-weight: lighter;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 30px;
+  height: 40px;
+}
+.address-modal-wrapper-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  width: 41vw;
+  height: 21vh;
+}
+.address-modal-header-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+.green-tick-icon {
+  width: 4, 5vw;
+  height: 9vh;
+}
+.form-button-dashboard {
+  background-color: white;
+  display: inline-block;
+  border: 1px solid #27c722;
+  border-radius: 50px;
+  color: $green;
+  font-size: 13px;
+  padding: 2px 24px;
+  font-weight: lighter;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 30px;
+  height: 40px;
+}
+.navigation-buttons {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  gap: 30px;
+}
+
+@media only screen and (max-width: 840px) {
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  :host {
+    display: block;
+    ::ng-deep {
+      .mat-form-field {
+        display: block;
+        width: 100%;
+      }
+      .green-tick-icon {
+        display: none;
+      }
+      .address-modal-wrapper-nav {
+        width: 100%;
+      }
+    }
+  }
+}

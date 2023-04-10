@@ -1,0 +1,92 @@
+<ng-container *ngIf="viewModel$ | async as viewModel">
+  <ng-container [ngSwitch]="viewModel.saveSate">
+    <div class="mission-modal-wrapper" *ngSwitchCase="'idle'">
+      <h1>{{ "ADDING_MISSIONS" | translate }}</h1>
+      <h5>{{ "ENTER_DATA" | translate }}</h5>
+
+      <form [formGroup]="form" (ngSubmit)="saveMission()">
+        <div class="form-wrapper">
+          <mat-form-field appearance="fill">
+            <mat-label>{{ "MISSION_CODE_NAME" | translate }}</mat-label>
+            <input
+              matInput
+              type="text"
+              [formControl]="form.controls.codename"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>{{ "MISSION_DEADLINE" | translate }}</mat-label>
+            <input
+              matInput
+              type="text"
+              [formControl]="form.controls.startDate"
+            />
+          </mat-form-field>
+        </div>
+        <div class="form-wrapper">
+          <mat-form-field appearance="fill">
+            <mat-label>{{ "MISSION_BUDGET" | translate }}</mat-label>
+            <input
+              placeholder="Budżet"
+              matInput
+              type="text"
+              [formControl]="form.controls.budget"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>{{ "MISSION_STATUS" | translate }}</mat-label>
+            <select matNativeControl [formControl]="form.controls.status">
+              <option value="In Progress">
+                {{ "IN_PROGRESS" | translate }}
+              </option>
+              <option value="Future">{{ "FUTURE" | translate }}</option>
+              <option value="Done">{{ "DONE" | translate }}</option>
+            </select>
+          </mat-form-field>
+        </div>
+        <div class="form-button-wrapper">
+          <button
+            mat-stroked-button
+            class="form-button"
+            type="button"
+            (click)="closeModal()"
+          >
+            {{ "CANCEL" | translate }}
+          </button>
+          <button
+            mat-stroked-button
+            class="form-button-save"
+            [disabled]="!form.valid"
+          >
+            {{ "SAVE" | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div *ngSwitchCase="'saved'">
+      <div class="mission-modal-wrapper-nav">
+        <div class="mission-modal-header-wrapper">
+          <img
+            class="green-tick-icon"
+            src="assets/svg/green_tick.png"
+            alt="success green tick"
+          />
+          <h1 class="mission-modal-header">
+            {{ "CONGRATULATIONS" | translate }}
+            {{ form.controls.codename.value }}.
+          </h1>
+        </div>
+        <div class="navigation-buttons">
+          <button class="form-button-dashboard" (click)="backToDashboard()">
+            {{ "GO_BACK_TO_THE_DASHBOARD" | translate }}
+          </button>
+          <button class="form-button-save" (click)="closeModal()">
+            {{ "GO_BACK_TO_THE_LIST" | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>

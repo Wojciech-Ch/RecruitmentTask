@@ -1,0 +1,112 @@
+@use "../../../../styles/variables.scss" as variables;
+
+:host {
+  display: block;
+  height: 100%;
+  ::ng-deep {
+    .mat-checkbox {
+      font-family: "Montserrat";
+    }
+    .mat-toolbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2.5vw 0 2.5vw;
+    }
+    .mat-drawer {
+      min-width: 15vw;
+    }
+    .mat-drawer-container {
+      position: relative;
+      height: 100%;
+    }
+    .mat-toolbar-row,
+    .mat-toolbar-single-row {
+      height: 13vh;
+    }
+    .mat-toolbar.mat-primary {
+      background: variables.$white;
+      color: variables.$black;
+    }
+    .mat-drawer-inner-container {
+      margin: 0;
+    }
+  }
+}
+
+.o4b-logo {
+  width: 8vw;
+  height: 8.5vh;
+}
+
+.change-language-section {
+  position: absolute;
+  top: 0;
+  right: 6%;
+  height: 1.95vw;
+  font-size: 1vw;
+  background-color: variables.$gray;
+}
+
+.change-language-scetion-icon {
+  width: 1.6vw;
+  height: 1.6vw;
+}
+
+.navbar-label {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.overlay-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: variables.$white;
+  width: 41vw;
+  height: 20vh;
+  border-radius: 3.75vw;
+  padding: 1.25vw;
+}
+
+.user-info {
+  background-color: variables.$gray;
+  padding: 1.8vw;
+  width: 92%;
+  font-size: 1.1vw;
+  border-radius: 20px;
+}
+
+.overlay-header {
+  padding: 0.625vw 0 0 0.625vw;
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+
+.overlay-button {
+  background-color: variables.$white;
+  border: none;
+}
+
+.navbar-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+}
+
+.navbar-actions-button {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25vw;
+  justify-content: center;
+  align-items: center;
+  background-color: variables.$white;
+  border: none;
+}
+@media only screen and (max-width: 800px) {
+  .o4b-logo,
+  .search-icon {
+    display: none;
+  }
+}

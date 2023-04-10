@@ -1,0 +1,43 @@
+<div class="mission-section-wrapper">
+  <div class="sidebar">
+    <div class="sidebar-sub">{{ "ALL_MISSIONS" | translate }}</div>
+  </div>
+  <div class="missions-table">
+    <ng-container *ngIf="viewModel$ | async as viewModel">
+      <h1 class="missions-header">{{ "MISSION_MANAGEMENT" | translate }}</h1>
+      <p class="missions-sub-header">
+        {{ "YOU_WILL_FIND_HERE_YOUR_SPECIAL_MISSIONS" | translate }}
+      </p>
+
+      <ng-container [ngSwitch]="viewModel.loadState">
+        <div *ngSwitchCase="'idle'">
+          <div class="border">
+            <div class="desc">{{ "ITS_EMPTY" | translate }}</div>
+            <img class="image" src="assets/svg/illustration.svg" alt="rocket image" />
+            <button (click)="loadMissions()" class="load-mission-button">
+              {{ "LOAD_MISSIONS" | translate }}
+            </button>
+          </div>
+        </div>
+
+        <div *ngSwitchCase="'loading'">
+          <mat-spinner></mat-spinner>
+        </div>
+
+        <div class="border-table" *ngSwitchCase="'loaded'">
+          <button
+            mat-stroked-button
+            (click)="openCreateMissionModal()"
+            class="add-mission-button"
+          >
+            {{ "ADD_MISSION" | translate }}
+          </button>
+
+          <app-missions-table
+            [missions]="viewModel.missions"
+          ></app-missions-table>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="login-page-wrapper">
+  <img class="company-logo" src="assets/svg/logo-o4b.svg" alt="company logo" />
+  <div class="form-wrapper">
+    <span class="form-label">{{ "LOG_IN" | translate }}</span>
+    <form [formGroup]="form" (ngSubmit)="login()">
+      <mat-form-field appearance="outline">
+        <input
+          placeholder="Login"
+          matInput
+          type="text"
+          [formControl]="form.controls.username"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <input
+          placeholder="{{ 'PASSWORD' | translate }}"
+          matInput
+          type="password"
+          [formControl]="form.controls.password"
+        />
+      </mat-form-field>
+
+      <div class="form-action-wrapper">
+        <div class="form-action">
+          <mat-checkbox>{{ "REMEMBER_ME" | translate }}</mat-checkbox>
+          <span class="forgot-your-passowrd">{{
+            "FORGOT_YOUR_LOGIN_OR_PASSWORD" | translate
+          }}</span>
+        </div>
+        <div class="form-action">
+          <button mat-stroked-button class="forget-passowrd">
+            {{ "SIGN_UP" | translate }}
+          </button>
+          <button mat-stroked-button color="primary">
+            {{ "LOG_IN" | translate }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
